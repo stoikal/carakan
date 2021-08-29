@@ -52,24 +52,27 @@ export default class Text {
   }
 
   _isSpecialChar(char: string) {
-    return /[^êéèåa-z0-9]/.test(char)
+    return /[^êéèåa-z0-9'#]/.test(char)
   }
 
   _isVowel(char: string) {
-    return 'aåiueêéèo'.includes(char)
+    return 'aåiueêéèo#'.includes(char)
   }
 
-  // check for NG NY TH DH
+  // check for NG NY DH GH KH SH TH ZH DZ TS
   _isDoubleChar(char: string) { 
     const { nglegena } = this._state
 
-    return (nglegena === 'n' && 'yg'.includes(char)) || (char === 'h' && 'td'.includes(nglegena))
+    return (nglegena === 'n' && 'yg'.includes(char)) 
+      || (char === 'h' && 'dgkstz'.includes(nglegena))
+      || (nglegena === 'd' && char === 'z')
+      || (nglegena === 't' && char === 's')
   }
 
   toJavanese() {
-
+    console.log('=================')
     for (const char of this.source.trim().toLowerCase()) {
-
+      console.log(char, this._state)
       if (this._state.swara) this._processSyllable()
 
       const { nglegena } = this._state
@@ -80,13 +83,13 @@ export default class Text {
         }
         this._state.swara += char
       
-      
       } else if (this._isSpecialChar(char)) {
         if (!this._state.swara) {
           this._state.sesigeg += this._state.nglegena
           this._state.nglegena = ''
         }
         this._processSyllable()
+
       } else {
         if (!nglegena) {
           this._state.nglegena += char
@@ -104,7 +107,7 @@ export default class Text {
     }
 
     if (this._trailingSyllable()) {
-      if (!this._state.swara && this._result) {
+      if (!this._state.swara && this._result) { // ignore if start of text
         this._state.sesigeg += this._state.nglegena
         this._state.nglegena = ''
       }

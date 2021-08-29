@@ -13,16 +13,53 @@ interface SesigegDictionary extends Dictionary {
 
 export const Nglegena: Dictionary = {
   _map: {
+    // missing: ha, dha, tha, sya,
 
-    h: 'ꦲ', n: 'ꦤ', c: 'ꦕ', r: 'ꦫ', k: 'ꦏ',
+    b: 'ꦧ', 
     
-    d: 'ꦢ', t: 'ꦠ', s: 'ꦱ', w: 'ꦮ', l: 'ꦭ',
+    c: 'ꦕ', 
+    
+    d: 'ꦢ', dh: 'ꦝ', dz: 'ꦢ꦳',
+    
+    f: 'ꦥ꦳', 
+    
+    g: 'ꦒ', gh: 'ꦒ꦳', 
+    
+    h: 'ꦲ',
+    
+    j: 'ꦗ', 
+    
+    k: 'ꦏ', kh: 'ꦏ꦳',
 
-    p: 'ꦥ', dh: 'ꦝ', j: 'ꦗ', y: 'ꦪ', ny: 'ꦚ',
+    l: 'ꦭ', 
+    
+    m: 'ꦩ',
+    
+    n: 'ꦤ', ng: 'ꦔ', ny: 'ꦚ',
+    
+    p: 'ꦥ', 
 
-    m: 'ꦩ', g: 'ꦒ', b: 'ꦧ', th: 'ꦛ', ng: 'ꦔ',
+    q: 'ꦐ',
+    
+    r: 'ꦫ',
+    
+    s: 'ꦱ', sh: 'ꦰ꦳',
+    
+    t: 'ꦠ', th: 'ꦛ', ts: 'ꦱ꦳',
+    
+    v: 'ꦮ꦳',
+    
+    w: 'ꦮ',
+    
+    x: 'ꦑ꦳',
+    
+    y: 'ꦪ',
 
-    a: 'ꦲ'
+    z: 'ꦗ꦳', zh: 'ꦝ ꦳',
+
+    a: 'ꦲ',
+
+    "'": 'ꦔ꦳' // 'ain
   },
 
   get(n: string) {
@@ -49,7 +86,7 @@ export const Swara: Dictionary = {
 
     i: 'ꦶ', u: 'ꦸ',
 
-    ê: '', e: '', é: 'ꦺ', è: 'ꦺ',
+    ê: 'ꦼ', e: 'ꦺ', é: 'ꦺ', è: 'ꦺ', '#': 'ꦼ',
 
     o: 'ꦺꦴ', 
 
