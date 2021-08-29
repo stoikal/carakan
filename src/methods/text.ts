@@ -1,5 +1,12 @@
 import { Nglegena, Wyanjana, Swara, Sesigeg } from "./dictonary"
 
+interface State {
+  sesigeg: string
+  nglegena: string
+  wyanjana: string
+  swara: string
+}
+
 const initialState = Object.freeze({
   sesigeg: '',
   nglegena: '',
@@ -8,7 +15,11 @@ const initialState = Object.freeze({
 })
 
 export default class Text {
-  constructor(src) {
+  source: string
+  _state: State
+  _result: string
+
+  constructor(src: string) {
     this.source = src
     
     this._state = { ...initialState }
@@ -40,16 +51,16 @@ export default class Text {
     this._clearState()
   }
 
-  _isSpecialChar(char) {
+  _isSpecialChar(char: string) {
     return /[^êéèåa-z0-9]/.test(char)
   }
 
-  _isVowel(char) {
+  _isVowel(char: string) {
     return 'iueoa'.includes(char)
   }
 
   // check for NG NY TH DH
-  _isDoubleChar(char) { 
+  _isDoubleChar(char: string) { 
     const { nglegena } = this._state
 
     return (nglegena === 'n' && 'yg'.includes(char)) || (char === 'h' && 'td'.includes(nglegena))
@@ -57,7 +68,7 @@ export default class Text {
 
   toJavanese() {
 
-    for (let char of this.source.trim().toLowerCase()) {
+    for (const char of this.source.trim().toLowerCase()) {
 
       if (this._state.swara) this._processSyllable()
 
