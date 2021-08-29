@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <textarea v-model="srcText" rows="8" cols="60"/>
+    <h1>Aksara Latin ke Aksara Jawa (simplified)</h1>
+    <textarea :value="inputText" rows="8" cols="60" @input.prevent="handleInputChange"/>
     <br />
-    <textarea id="result" :value="resultText" rows="8" cols="60" disabled/>
+    <textarea :value="resultText" rows="8" cols="60" disabled/>
   </div>
 </template>
 
@@ -14,12 +15,19 @@ export default Vue.extend({
   name: 'App',
   data() {
     return {
-      srcText: ''
+      inputText: ''
     }
   },
   computed: {
     resultText(): string {
-      return toJavaneseScript(this.srcText)
+      return toJavaneseScript(this.inputText)
+    }
+  },
+  methods: {
+    handleInputChange(e: Event) {
+      const { value } = e.currentTarget as HTMLInputElement;
+
+      this.inputText = value.replaceAll('#', 'ê')
     }
   }
 })

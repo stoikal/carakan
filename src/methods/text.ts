@@ -70,9 +70,7 @@ export default class Text {
   }
 
   toJavanese() {
-    console.log('=================')
     for (const char of this.source.trim().toLowerCase()) {
-      console.log(char, this._state)
       if (this._state.swara) this._processSyllable()
 
       const { nglegena } = this._state
@@ -96,7 +94,7 @@ export default class Text {
         } else {
           if(this._isDoubleChar(char)) {
             this._state.nglegena += char
-          } else if ('yrlw'.includes(char)) {
+          } else if ('yrlw'.includes(char) && !['r', 'h'].includes(nglegena)) {
             this._state.wyanjana += char
           } else {
             this._state.sesigeg += nglegena
