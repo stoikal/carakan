@@ -56,7 +56,7 @@ export default class Text {
   }
 
   _isVowel(char: string) {
-    return 'iueoa'.includes(char)
+    return 'aåiueêéèo'.includes(char)
   }
 
   // check for NG NY TH DH

@@ -1,5 +1,5 @@
 interface Dictionary {
-  _table: {
+  _map: {
     [index: string]: string
   }
 
@@ -12,43 +12,59 @@ interface SesigegDictionary extends Dictionary {
 }
 
 export const Nglegena: Dictionary = {
-  _table: {
+  _map: {
+
     h: 'ꦲ', n: 'ꦤ', c: 'ꦕ', r: 'ꦫ', k: 'ꦏ',
+    
     d: 'ꦢ', t: 'ꦠ', s: 'ꦱ', w: 'ꦮ', l: 'ꦭ',
+
     p: 'ꦥ', dh: 'ꦝ', j: 'ꦗ', y: 'ꦪ', ny: 'ꦚ',
+
     m: 'ꦩ', g: 'ꦒ', b: 'ꦧ', th: 'ꦛ', ng: 'ꦔ',
 
     a: 'ꦲ'
   },
 
   get(n: string) {
-    return n && this._table[n] || ''
+    return n && this._map[n] || ''
   } 
 }
 
 export const Wyanjana: Dictionary = {
-  _table: {
+  _map: {
+
     y: 'ꦾ', r: 'ꦿ', l: '꧀ꦭ', w: '꧀ꦮ', g: '꧀ꦒ'
+
   },
 
   get(n: string) {
-    return n && this._table[n] || ''
+    return n && this._map[n] || ''
   } 
 }
 
 export const Swara: Dictionary = {
-  _table: {
-    i: 'ꦶ', u: 'ꦸ', e: 'ꦺ', o: 'ꦺꦴ', a: ''
+  _map: {
+
+    a: '', å: '',
+
+    i: 'ꦶ', u: 'ꦸ',
+
+    ê: '', e: '', é: 'ꦺ', è: 'ꦺ',
+
+    o: 'ꦺꦴ', 
+
   },
 
   get(n: string) {
-    return n && this._table[n] || ''
+    return n && this._map[n] || ''
   } 
 }
 
 export const Sesigeg: SesigegDictionary = {
-  _table: {
+  _map: {
+
     ng: 'ꦁ', r: 'ꦂ', h: 'ꦃ'
+
   },
 
   _pangkon: '꧀',
@@ -56,7 +72,7 @@ export const Sesigeg: SesigegDictionary = {
   _nglegena: Nglegena,
 
   get(n: string) {
-    if (n) return this._table[n] || this._nglegena.get(n) + this._pangkon
+    if (n) return this._map[n] || this._nglegena.get(n) + this._pangkon
     return ''
   } 
 }
