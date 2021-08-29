@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <textarea v-model="srcText" rows="8" cols="80"/>
+    <br />
+    <textarea id="result" :value="resultText" rows="8" cols="80" disabled/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import toJavaneseScript from './methods/toJavaneseScript'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      srcText: ''
+    }
+  },
+  computed: {
+    resultText() {
+      return toJavaneseScript(this.srcText)
+    }
   }
 }
 </script>
@@ -24,5 +32,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+textarea {
+  font-size: 2em;
+}
+
+#result {
+  font-size: 2em;
 }
 </style>
