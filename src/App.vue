@@ -6,10 +6,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import toJavaneseScript from './methods/toJavaneseScript'
 
-export default {
+export default Vue.extend({
   name: 'App',
   data() {
     return {
@@ -17,11 +18,11 @@ export default {
     }
   },
   computed: {
-    resultText() {
+    resultText(): string {
       return toJavaneseScript(this.srcText)
     }
   }
-}
+})
 </script>
 
 <style>
@@ -32,13 +33,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-textarea {
-  font-size: 2em;
-}
-
-#result {
-  font-size: 2em;
 }
 </style>
