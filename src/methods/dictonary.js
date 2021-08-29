@@ -15,7 +15,7 @@ export const Nglegena = {
 
 export const Wyanjana = {
   _table: {
-    y: ' ꦾ', r: ' ꦿ', l: ' ꧀ꦭ', w: ' ꧀ꦮ'
+    y: 'ꦾ', r: 'ꦿ', l: '꧀ꦭ', w: '꧀ꦮ', g: '꧀ꦒ'
   },
 
   get(n) {
@@ -25,7 +25,7 @@ export const Wyanjana = {
 
 export const Swara = {
   _table: {
-    i: ' ꦶ', u: ' ꦸ', e: ' ꦺ', o: ' ꦺꦴ', a: ''
+    i: 'ꦶ', u: 'ꦸ', e: 'ꦺ', o: 'ꦺꦴ', a: ''
   },
 
   get(n) {
@@ -35,10 +35,10 @@ export const Swara = {
 
 export const Sesigeg = {
   _table: {
-    ng: '', r: '', l: '', h: ''
+    ng: 'ꦁ', r: 'ꦂ', h: 'ꦃ'
   },
 
-  _pangkon: ' ꧀',
+  _pangkon: '꧀',
 
   _nglegena: Nglegena,
 
