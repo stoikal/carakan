@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>Aksara Latin ke Aksara Jawa (simplified)</h1>
-    <textarea :value="inputText" rows="8" cols="60" @input.prevent="handleInputChange"/>
+    <textarea id="input-text" :value="inputText" rows="5" @input.prevent="handleInputChange"/>
     <br />
-    <textarea :value="resultText" rows="8" cols="60" disabled/>
+    <textarea id="output-text" :value="outputText" rows="8" disabled/>
   </div>
 </template>
 
@@ -15,11 +15,11 @@ export default Vue.extend({
   name: 'App',
   data() {
     return {
-      inputText: ''
+      inputText: 'Saben umat manungsa lair kanthi hak-hak kang padha'
     }
   },
   computed: {
-    resultText(): string {
+    outputText(): string {
       return toJavaneseScript(this.inputText)
     }
   },
@@ -34,15 +34,28 @@ export default Vue.extend({
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 textarea {
   font-size: 2em;
+  width: 100%;
+  max-width: 800px;
+  resize: vertical;
+}
+
+#input-text {
+  font-size: 1.5em;
 }
 </style>
