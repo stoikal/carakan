@@ -34,14 +34,14 @@ export default Vue.extend({
 </script>
 
 <style>
-@font-face {
-  font-family: "NotoSansJavanese";
-  src: url("./assets/NotoSansJavanese-Regular.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 @font-face {
-  font-family: "TuladhaJejeg";
-  src: url("./assets/TuladhaJejeg_gr.ttf");
+    font-family: "Noto Sans Javanese";
+    src: url("./assets/notosansjavanese-regular-webfont.woff2") format("woff2"),
+         url("./assets/notosansjavanese-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 * {
@@ -49,7 +49,7 @@ export default Vue.extend({
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Noto Sans, Noto Sans Javanese, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -59,10 +59,10 @@ export default Vue.extend({
 }
 
 textarea {
-  font-size: 2em;
   width: 100%;
   max-width: 800px;
   resize: vertical;
+  padding: 0.5em;
 }
 
 #input-text {
@@ -70,6 +70,6 @@ textarea {
 }
 
 #output-text {
-  font-family: TuladhaJejeg, sans-serif;
+  font-size: 2em;
 }
 </style>
