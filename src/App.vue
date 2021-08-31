@@ -15,7 +15,7 @@ export default Vue.extend({
   name: 'App',
   data() {
     return {
-      inputText: 'Saben umat manungsa lair kanthi hak-hak kang padha'
+      inputText: 'Sabên umat manungsa lair kanthi hak-hak kang padha'
     }
   },
   computed: {
@@ -34,6 +34,16 @@ export default Vue.extend({
 </script>
 
 <style>
+@font-face {
+  font-family: "NotoSansJavanese";
+  src: url("./assets/NotoSansJavanese-Regular.ttf");
+}
+
+@font-face {
+  font-family: "TuladhaJejeg";
+  src: url("./assets/TuladhaJejeg_gr.ttf");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -57,5 +67,9 @@ textarea {
 
 #input-text {
   font-size: 1.5em;
+}
+
+#output-text {
+  font-family: TuladhaJejeg, sans-serif;
 }
 </style>
