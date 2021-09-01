@@ -31,17 +31,17 @@ export const Nglegena: Dictionary = {
     
     k: 'ꦏ', kh: 'ꦏ꦳',
 
-    l: 'ꦭ', 
+    l: 'ꦭ', lê: 'ꦊ',
     
     m: 'ꦩ',
     
-    n: 'ꦤ', ng: 'ꦔ', ny: 'ꦚ',
+    n: 'ꦤ', ng: 'ꦔ', ny: 'ꦚ', ŋ: 'ꦔ',
     
     p: 'ꦥ', 
 
     q: 'ꦐ',
     
-    r: 'ꦫ',
+    r: 'ꦫ', rê: 'ꦉ',
     
     s: 'ꦱ', sh: 'ꦰ꦳',
     
@@ -70,7 +70,7 @@ export const Nglegena: Dictionary = {
 export const Wyanjana: Dictionary = {
   _map: {
 
-    y: 'ꦾ', r: 'ꦿ', l: '꧀ꦭ', w: '꧀ꦮ', g: '꧀ꦒ'
+    y: 'ꦾ', r: 'ꦿ', l: '꧀ꦭ', w: '꧀ꦮ', g: '꧀ꦒ', rê: 'ꦽ', lê: '꧀ꦊ'
 
   },
 
@@ -86,13 +86,14 @@ export const Swara: Dictionary = {
 
     i: 'ꦶ', u: 'ꦸ',
 
-    ê: 'ꦼ', e: 'ꦺ', é: 'ꦺ', è: 'ꦺ', '#': 'ꦼ',
+    ê: 'ꦼ', e: 'ꦺ', é: 'ꦺ', è: 'ꦺ',
 
     o: 'ꦺꦴ', 
 
   },
 
   get(n: string) {
+    if (n === '#') n = 'ê'
     return n && this._map[n] || ''
   } 
 }
