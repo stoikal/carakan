@@ -82,9 +82,9 @@ export const Wyanjana: Dictionary = {
 export const Swara: Dictionary = {
   _map: {
 
-    a: '', å: '',
+    a: '', å: '', ā: 'ꦴ',
 
-    i: 'ꦶ', u: 'ꦸ',
+    i: 'ꦶ', ī: 'ꦷ', u: 'ꦸ', ū: 'ꦹ',
 
     ê: 'ꦼ', e: 'ꦺ', é: 'ꦺ', è: 'ꦺ',
 
