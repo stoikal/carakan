@@ -62,6 +62,7 @@ export default Vue.extend({
 }
 
 textarea {
+  font-family: inherit;
   width: 100%;
   max-width: 800px;
   resize: vertical;
@@ -69,7 +70,7 @@ textarea {
 }
 
 #input-text {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 #output-text {
