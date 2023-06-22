@@ -2,7 +2,7 @@
 
 
 ## Page
-[https://xlaks.github.io/carakan/](https://xlaks.github.io/carakan/)
+[https://stoikal.github.io/carakan/](https://stoikal.github.io/carakan/)
 
 ## Project setup
 ```
